@@ -1,0 +1,29 @@
+{
+  "name": "rabbitmq_vs_kafka",
+  "version": "1.0.0",
+  "description": "RabbitMQ vs Kafka talk",
+  "main": "index.js",
+  "dependencies": {  
+  },
+  "devDependencies": {
+    "@marp-team/marpit": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rresino/talks/rabbitmq_vs_kafka"
+  },
+  "keywords": [
+    "rabbitmq",
+    "kafka",
+    "talk"
+  ],
+  "marp": {
+    "inputDir": "./slides",
+    "output": "./public/"
+  },
+  "author": "Rubén Resino",
+  "license": "MIT"
+}
