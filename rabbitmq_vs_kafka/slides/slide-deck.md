@@ -218,26 +218,17 @@ Serializers:
 - **GUI Clients:** Kafdrop, Kafka Manager, Conduktor, Kafka UI ...
 - **Kafka Stream**
 - **Avro + Schema Registry**
-- **Connector**
+- **Confluent Connector** Connectors to copy data between Kafka and other systems.
 - **ksqlDB:** Kafka stream as a database.
 
 ---
 
-# When use RabbitMQ 
+![bg vertical left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/rabbitmq.png) 
+![bg left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/kafka.png)
 
-- Simple pub-sub.
-- Ensure consumption only 1 time each message.
-- No DevOps or lack of them.
+# **RabbitMQ vs Kafka**
 
-
----
-
-# When use Kafka 
-
-- Strong knowledge of Kafka or can use a Cloud Kafka provider.
-- Big data, ETL, IOT events...
-- Event streaming or Event sourcing.
-- When you need to store and consume thousands of events in real time. 
+Examples
 
 ---
 
@@ -245,9 +236,9 @@ Serializers:
 
 ![bg left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/rabbitmq.03.png) 
 
-* Micro #1 - publish a msg 
 * Exchange - Fanout
-* X Topics one per Micro
+* X Topics one per Micro #
+* Micro #1 - publish a msg
 
 ---
 
@@ -268,8 +259,8 @@ Serializers:
 
 ![bg vertical left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/kafka.04.jpg)
 
-* Micro #1 - publish a msg 
 * Topic
+* Micro #1 - publish a msg 
 * Micro #2 - Listen to topic
 
 ---
