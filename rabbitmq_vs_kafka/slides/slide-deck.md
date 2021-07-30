@@ -1,4 +1,5 @@
 ---
+
 theme: gaia
 _class: lead
 paginate: true
@@ -98,6 +99,13 @@ channel.basic_publish(exchange='logs',
                       routing_key='',
                       body=message)
 ```
+
+---
+
+# Rabbit MQ: How it works
+
+![bg left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/rabbitmq.06.png) 
+
 ---
 
 # Rabbit MQ: ... and one more thing
@@ -119,7 +127,7 @@ Apache Kafka is a framework implementation of a software bus using stream-proces
 
 # What is Apache Kafka
 
-- Created by Linkedln, nos Open Source Project maintained by Confluent
+- Created by Linkedln, now it's a Open Source Project maintained by Confluent.
 - Write in Java and Scala.
 - Distributed, resilent arquitecture. fault tolerant
 
@@ -151,18 +159,10 @@ Apache Kafka is a framework implementation of a software bus using stream-proces
 
 ![bg left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/kafka.01.png) 
 
-- Producer/s 
+- Producer/s
 - Zookeeper *
 - Kafka
 - Consumer/s
-
----
-
-# Apache Kafka: How it works
-
-![bg vertical left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/kafka.04.jpg) 
-
-- Topics Offsets
 
 ---
 
@@ -172,6 +172,14 @@ Apache Kafka is a framework implementation of a software bus using stream-proces
 
 - Zookeeper nodes
 - Kafka nodes
+
+---
+
+# Apache Kafka: How it works
+
+![bg vertical left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/kafka.04.jpg) 
+
+- Topics Offsets
 
 ---
 
@@ -212,3 +220,82 @@ Serializers:
 - **Avro + Schema Registry**
 - **Connector**
 - **ksqlDB:** Kafka stream as a database.
+
+---
+
+# When use RabbitMQ 
+
+- Simple pub-sub.
+- Ensure consumption only 1 time each message.
+- No DevOps or lack of them.
+
+
+---
+
+# When use Kafka 
+
+- Strong knowledge of Kafka or can use a Cloud Kafka provider.
+- Big data, ETL, IOT events...
+- Event streaming or Event sourcing.
+- When you need to store and consume thousands of events in real time. 
+
+---
+
+# Event Sourcing with RabbitMQ
+
+![bg left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/rabbitmq.03.png) 
+
+* Micro #1 - publish a msg 
+* Exchange - Fanout
+* X Topics one per Micro
+
+---
+
+# Event Sourcing with RabbitMQ
+
+![bg left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/rabbitmq.03.png) 
+
+## Problems:
+
+* Add binding on exchange per new micro.
+* Duplicate topics.
+* Loose mgs.
+* No event history.
+
+---
+
+# Event Sourcing with Kafka
+
+![bg vertical left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/kafka.04.jpg)
+
+* Micro #1 - publish a msg 
+* Topic
+* Micro #2 - Listen to topic
+
+---
+
+# When use RabbitMQ 
+
+- Simple pub-sub.
+- Priority queues.
+- Ensure consumption only 1 time each message.
+- No DevOps or lack of them.
+
+---
+
+# When use Kafka 
+
+- Strong knowledge of Kafka or can use a Cloud Kafka provider.
+- Events in real time.
+- Big data, ETL, IOT events...
+- Event streaming or Event sourcing.
+- When you need to store and consume thousands of events in real time. 
+
+---
+
+# Performance
+
+![bg vertical left:40% 80%](https://raw.githubusercontent.com/rresino/talks/main/rabbitmq_vs_kafka/public/img/performance.01.png)
+
+https://www.confluent.io/blog/kafka-fastest-messaging-system/
+
